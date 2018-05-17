@@ -18,4 +18,4 @@ def index():
 def check():
     return nick.eval()
 
-app.run(host='0.0.0.0',port=80)
+app.run(host='0.0.0.0',port=2107)

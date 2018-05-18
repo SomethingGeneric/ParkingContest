@@ -22,18 +22,18 @@ class check:
 class student:
     #template
     name = ""
-    email = ""
+    ID = ""
     grade = 9
     sports = ""
-    intern = ""
+    intern = False
     dual = False
     disabilities = False
     other_reason = ""
     
     #This is the constructor, which defines the variables required to pass in at creation of the object.
-    def __init__(self, name, email, grade, sports, intern, dual, disabilities, other_reason):
+    def __init__(self, name, id, grade, sports, intern, dual, disabilities, other_reason):
         self.name = name
-        self.email = email
+        self.ID = id
         self.grade = grade
         self.sports = sports
         self.intern = intern

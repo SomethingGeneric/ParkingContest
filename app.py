@@ -15,6 +15,7 @@ nick= parking.check()
 # app.route is the url that the user will enter in the browser to get the contents of this function
 @app.route("/")
 def index():
+    app.logger.info('Someone saw the homepage')
     return homepage
 
 # if you were running this locally, you'd enter http://localhost:2107/check to get this

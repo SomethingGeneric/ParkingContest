@@ -27,7 +27,7 @@ class student:
     sports = ""
     intern = ""
     dual = False
-    disabilities = ""
+    disabilities = False
     other_reason = ""
     
     #This is the constructor, which defines the variables required to pass in at creation of the object.

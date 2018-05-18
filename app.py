@@ -1,6 +1,8 @@
 from flask import Flask
 import parking
 
+#I don't understand flask help
+
 app = Flask(__name__)
 
 f = open("html/index.html")

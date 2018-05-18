@@ -13,8 +13,10 @@ class check:
         elif student.grade == 12:
             # conditions
             return
-        
+#This is the student object that contains all the information required.     
+
 class student:
+    #template
     name = ""
     email = ""
     grade = 9
@@ -24,6 +26,7 @@ class student:
     disabilities = ""
     other_reason = ""
     
+    #This is the constructor, which defines the variables required to pass in at creation of the object.
     def __init__(self, name, email, grade, sports, intern, dual, disabilities, other_reason):
         self.name = name
         self.email = email

@@ -2,17 +2,21 @@ class check:
     def __init__(self):
         return
     #Pass in a student object
-    def eval(student):
+    def eval(stdnt):
         if student.grade == 9:
-            return "No pass for you. How can you even drive??"
+            return reject("Um how drive?")
         elif student.grade == 10:
-            return "Logged the special reason below, you'll hear from administrators soon, hopefully."
+            return reject("Um how drive?")
         elif student.grade == 11:
             # qualifiers
-            return
+            checkID(stdnt)
+            
         elif student.grade == 12:
             # conditions
-            return
+            checkID(stdnt)
+            
+        
+        
 #This is the student object that contains all the information required.     
 
 class student:
@@ -36,5 +40,15 @@ class student:
         self.dual = dual
         self.disabilities = disabilities
         self.other_reason = other_reason
+    
+    def reject(reason):
+        return "Hah no: " + reason
+    
+    def checkID(Student):
+        #Search database for ID
+        #If its in the database return yes
+        #if its not in the database return nah
+        
+    
     
       

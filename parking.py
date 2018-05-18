@@ -22,7 +22,7 @@ class student:
     grade = 9
     sports = ""
     intern = ""
-    dual = false
+    dual = False
     disabilities = ""
     other_reason = ""
     

@@ -34,6 +34,7 @@ class check:
                         accept(stdnt)
             else:
                 reject("ID ain't valid m8")
+   #Methods about stuff
     def reject(reason):
         return "Hah no: " + reason
     

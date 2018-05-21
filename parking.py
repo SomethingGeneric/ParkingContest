@@ -16,10 +16,10 @@ class check:
             # qualifiers
             if checkID(stdnt) == true:
                 if stdnt.distanceInMiles < 1.0:
-                    reject("Um walk?")
+                    return reject("Um walk?")
                 else:
                     if checkForSpecialStuff(stdnt) > 3:
-                        accept(stdnt)
+                        return accept(stdnt)
                     
             else:
                 reject("ID ain't valid m8")
@@ -28,10 +28,10 @@ class check:
             # conditions
             if checkID(stdnt) == true:
                 if stdnt.distanceInMiles < 1.0:
-                    reject("Um walk?")
+                    return reject("Um walk?")
                 else:
                     if checkForSpecialStuff(stdnt) >= 1:
-                        accept(stdnt)
+                        return accept(stdnt)
             else:
                 reject("ID ain't valid m8")
    #Methods about stuff

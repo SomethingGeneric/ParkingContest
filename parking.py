@@ -31,7 +31,7 @@ class check:
                     return reject("Um walk?")
                 else:
                     if checkForSpecialStuff(stdnt) >= 1:
-                        return accept(stdnt)
+                        return giveParkingSpace(stdnt)
             else:
                 reject("ID ain't valid m8")
    #Methods about stuff
@@ -86,7 +86,7 @@ class student:
     other_reason = ""
     
     #This is the constructor, which defines the variables required to pass in at creation of the object.
-    def __init__(self, name, id, grade, sports, intern, dual, disabilities, other_reason):
+    def __init__(self, name, id, grade, sports, intern, dual, disabilities, distance, other_reason):
         self.name = name
         self.ID = id
         self.grade = grade
@@ -94,6 +94,7 @@ class student:
         self.intern = intern
         self.dual = dual
         self.disabilities = disabilities
+        self.distanceInMiles = distance
         self.other_reason = other_reason
     
     

@@ -14,7 +14,7 @@ class check:
             return reject("Um how drive?")
         elif stdnt.grade == 11:
             # qualifiers
-            if checkID(stdnt) == True:
+            if checkID(stdnt) == true:
                 if stdnt.distanceInMiles < 1.0:
                     return reject("Um walk?")
                 else:
@@ -26,7 +26,7 @@ class check:
             
         elif stdnt.grade == 12:
             # conditions
-            if checkID(stdnt) == True:
+            if checkID(stdnt) == true:
                 if stdnt.distanceInMiles < 1.0:
                     return reject("Um walk?")
                 else:
@@ -40,35 +40,35 @@ class check:
     
     def checkID(Student):
         if len(Student.ID) != 6:
-            return False
+            return false
         elif len(Student.ID == 6):
             #A little unsure if this works
             p = re.compile('[a-zA-Z]')
             if re.match(p, Student.ID):
-                return False
+                return false
             else:
-                return True
+                return true
         
 
     def checkForSpecialStuff(student):
         #Count how many special things (internship, sports, dual enrollment, disabilities, other reasons)
         count = 0
-        if student.sports == True:
+        if student.sports == true:
             count += 1
-        if student.intern == True:
+        if student.intern == true:
             count += 1
-        if student.dual == True:
+        if student.dual == true:
             count += 1
-        if student.disabilities == True:
+        if student.disabilities == true:
             count += 1
-        if student.other_reason == True:
+        if student.other_reason == true:
             count += 1
             
         return count
             
     def giveParkingSpace(student):
         #assign the student to the next available parking space                
-            
+        return("lol yes go: " + student.name)    
         
         
 #This is the student object that contains all the information required.     
@@ -103,7 +103,7 @@ class student:
 class parkingSpace:
     taken = False
     number = 0
-    student = none
+    student = None
     
     def __init__(self, taken, num, student):
         self.taken = taken

@@ -1,5 +1,6 @@
 import re
-
+#Somewhere we need to put a list of a certain number and fill it with preinitialized parking space objects 
+#so that we can quickly assign each accepted student to the next available one
 class check:
     def __init__(self):
         return

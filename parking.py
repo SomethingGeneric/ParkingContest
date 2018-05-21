@@ -34,34 +34,6 @@ class check:
                         accept(stdnt)
             else:
                 reject("ID ain't valid m8")
-            
-        
-        
-#This is the student object that contains all the information required.     
-
-class student:
-    #template
-    name = ""
-    ID = ""
-    grade = 9
-    sports = False
-    intern = False
-    dual = False
-    disabilities = False
-    distanceInMiles = 0.0
-    other_reason = ""
-    
-    #This is the constructor, which defines the variables required to pass in at creation of the object.
-    def __init__(self, name, id, grade, sports, intern, dual, disabilities, other_reason):
-        self.name = name
-        self.ID = id
-        self.grade = grade
-        self.sports = sports
-        self.intern = intern
-        self.dual = dual
-        self.disabilities = disabilities
-        self.other_reason = other_reason
-    
     def reject(reason):
         return "Hah no: " + reason
     
@@ -94,7 +66,36 @@ class student:
         return count
             
     def giveParkingSpace(student):
-        #assign the student to the next available parking space
+        #assign the student to the next available parking space                
+            
+        
+        
+#This is the student object that contains all the information required.     
+
+class student:
+    #template
+    name = ""
+    ID = ""
+    grade = 9
+    sports = False
+    intern = False
+    dual = False
+    disabilities = False
+    distanceInMiles = 0.0
+    other_reason = ""
+    
+    #This is the constructor, which defines the variables required to pass in at creation of the object.
+    def __init__(self, name, id, grade, sports, intern, dual, disabilities, other_reason):
+        self.name = name
+        self.ID = id
+        self.grade = grade
+        self.sports = sports
+        self.intern = intern
+        self.dual = dual
+        self.disabilities = disabilities
+        self.other_reason = other_reason
+    
+    
         
         
 class parkingSpace:

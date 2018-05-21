@@ -1,6 +1,6 @@
 from flask import Flask
 import parking
-from parking import student
+#from parking import student
 
 #I don't understand flask help -kris
 
@@ -10,7 +10,7 @@ f = open("html/index.html")
 homepage = f.read()
 f.close()
 
-nick= parking.check()
+#nick= parking.check()
 
 # app.route is the url that the user will enter in the browser to get the contents of this function
 @app.route("/")
@@ -24,7 +24,7 @@ def index():
 @app.route("/check/<name>/<Id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<distance>/<otherreason>")
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
     stud = student(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason)
-    return nick.eval(stud)
+    #return nick.eval(stud)
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably
 app.run(host='0.0.0.0',port=2107)

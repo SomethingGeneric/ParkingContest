@@ -31,6 +31,13 @@ def welcome():
     app.logger.info('Someone saw the welcome page')
     return serve_raw('signup')
 
+@app.route("/parking.css")
+def ouch():
+    x = open('html/parking.css')
+    f = x.read()
+    x.close()
+    return f
+
 
 # if you were running this locally, you'd enter http://localhost:2107/check to get this
   #string,string,int,string,boolean,boolean,boolean,string

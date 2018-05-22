@@ -37,23 +37,25 @@
 		<button type="button" id="SubmitButton" onclick="OnSubmitClick()">Submit</button>
 		
 		<script>
-			nameTextBox = document.getElementById("nameBox");
-			IDTextBox = document.getElementById("idBox");
-			gradeTextBox = document.getElementById("gradeBox");
-			sportsCheckBox = document.getElementById("sportsBox");
-			internCheckBox = document.getElementById("internBox");
-			dualCheckBox = document.getElementById("dualBox");
-			disabilitiesCheckBox = document.getElementById("disabilitiesBox");
-			otherCheckBox = document.getElementById("otherBox");
-			distanceTextBox = document.getElementById("distBox");
-			SubmitButton = document.getElementById("SubmitButton");
+			var nameTextBox = document.getElementById("nameBox");
+			var IDTextBox = document.getElementById("idBox");
+			var gradeTextBox = document.getElementById("gradeBox");
+			var sportsCheckBox = document.getElementById("sportsBox");
+			var internCheckBox = document.getElementById("internBox");
+			var dualCheckBox = document.getElementById("dualBox");
+			var disabilitiesCheckBox = document.getElementById("disabilitiesBox");
+			var otherCheckBox = document.getElementById("otherBox");
+			var distanceTextBox = document.getElementById("distBox");
+			var SubmitButton = document.getElementById("SubmitButton");
 
 			//SubmitButton.addEventListener("click", OnSubmitClick());
 
 
 			function OnSubmitClick(){
-    				window.open('0.0.0.0:2107/check/' + nameTextBox.value + '/' + IDTextBox.value + '/' + gradeTextBox.value + '/' + sportsCheckBox.value + '/' + internCheckBox.value + '/' + dualCheckBox.value + '/' + disabilitiesCheckBox.value + '/' + distanceTextBox.value + '/' + otherCheckBox, '_blank');
-    				alert("hah lol kys" + nameTextBox.value);
+				var link = '0.0.0.0:2107/check/' + nameTextBox.value + '/' + IDTextBox.value + '/' + gradeTextBox.value + '/' + sportsCheckBox.value + '/' + internCheckBox.value + '/' + dualCheckBox.value + '/' + disabilitiesCheckBox.value + '/' + distanceTextBox.value + '/' + otherCheckBox;
+    				alert(link);
+				window.open(link, '_blank');
+    				
 			}	
 		</script>
 		

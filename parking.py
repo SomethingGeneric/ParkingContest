@@ -83,7 +83,7 @@ class student:
     dual = False
     disabilities = False
     distanceInMiles = 0.0
-    other_reason = ""
+    other_reason = False
 
     #This is the constructor, which defines the variables required to pass in at creation of the object.
     def __init__(self, name, id, grade, sports, intern, dual, disabilities, distance, other_reason):

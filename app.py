@@ -1,11 +1,11 @@
 from flask import Flask
 import parking
-#from parking import student
+from parking import student
 
 #I don't understand flask help -kris
 
 app = Flask(__name__)
-
+nick= parking.check()
 
 
 def serve_raw(name):
@@ -14,7 +14,7 @@ def serve_raw(name):
     f.close()
     return str(homepage)
 
-#nick= parking.check()
+
 
 # app.route is the url that the user will enter in the browser to get the contents of this function
 @app.route("/")
@@ -45,7 +45,8 @@ def ouch():
 @app.route("/check/<name>/<Id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<distance>/<otherreason>")
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
     stud = student(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason)
-    #return nick.eval(stud)
+    
+    #nick.eval(stud)
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably
 app.run(host='0.0.0.0',port=2107)

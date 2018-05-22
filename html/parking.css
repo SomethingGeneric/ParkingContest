@@ -5,7 +5,7 @@ body, html {
 h1, li, p, h3{
   color:#FFC61D;
   font: "courier";
-  
+
 }
 xmp {
   color: FFC61D;
@@ -15,14 +15,7 @@ body:hover{
 	color:red;
 }
 body {
-
- 
-
-
- 
   height: 100%;
-
-
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -60,28 +53,26 @@ color: #002653;
 background-color:#DAA520 ;
 color: #002653;
 }
+#odd{
+    background-color:;
+    color:white;
+}
 
+#even{
+    background-color:;
+    color:white;
+}
+td{
+    padding: 20px;
+    font-family: arial;
+    font-size:10pt;
+}
 
-#odd{  
-    background-color:;  
-    color:white;      
-}  
-  
-#even{  
-    background-color:;  
-    color:white;  
-}  
-td{  
-    padding: 20px;  
-    font-family: arial;  
-    font-size:10pt;  
-}  
-  
-th{  
-    background-color:black;  
-    color:white;  
-}   
- 
+th{
+    background-color:black;
+    color:white;
+}
+
 table, th, td {
 	border: 1px solid black;
 	border-collapse: collapse;

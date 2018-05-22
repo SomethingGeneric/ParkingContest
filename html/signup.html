@@ -34,7 +34,7 @@
 		<p>Approximate distance from school in miles:</p>
 		<input type="text" id="distBox"><br>
 		<br>
-		<button type="button" id="SubmitButton">Submit</button>
+		<button type="button" id="SubmitButton" onclick="OnSubmitClick()">Submit</button>
 		
 		<script>
 			nameTextBox = document.getElementById("nameBox");
@@ -48,11 +48,11 @@
 			distanceTextBox = document.getElementById("distBox");
 			SubmitButton = document.getElementById("SubmitButton");
 
-			SubmitButton.addEventListener("click", OnSubmitClick());
+			//SubmitButton.addEventListener("click", OnSubmitClick());
 
 
 			function OnSubmitClick(){
-    				window.open('0.0.0.0:2107/check/' + nameTextBox.value + '/' + IDTextBox.value + '/' + gradeTextBox.value + '/' + sportsCheckBox.value + '/' + internCheckBox.value + '/' + dualCheckBox.value + '/' + disabilitiesCheckBox.value + '/' + distanceTextBox.value + '/' + otherCheckBox, '_blank');
+    				//window.open('0.0.0.0:2107/check/' + nameTextBox.value + '/' + IDTextBox.value + '/' + gradeTextBox.value + '/' + sportsCheckBox.value + '/' + internCheckBox.value + '/' + dualCheckBox.value + '/' + disabilitiesCheckBox.value + '/' + distanceTextBox.value + '/' + otherCheckBox, '_blank');
     				alert("hah lol kys" + nameTextBox.value);
 			}	
 		</script>

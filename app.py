@@ -6,9 +6,13 @@ import parking
 
 app = Flask(__name__)
 
-f = open("html/index.html")
-homepage = f.read()
-f.close()
+
+
+def serve_raw(name):
+    f = open("html/"+name+".html")
+    homepage = f.read()
+    f.close()
+    return str(homepage)
 
 #nick= parking.check()
 
@@ -16,7 +20,17 @@ f.close()
 @app.route("/")
 def index():
     app.logger.info('Someone saw the homepage')
-    return homepage
+    return serve_raw('index')
+
+@app.route("/kys")
+def end():
+    quit()
+
+@app.route("/signup")
+def welcome():
+    app.logger.info('Someone saw the welcome page')
+    return serve_raw('signup')
+
 
 # if you were running this locally, you'd enter http://localhost:2107/check to get this
   #string,string,int,string,boolean,boolean,boolean,string

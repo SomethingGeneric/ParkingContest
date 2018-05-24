@@ -42,7 +42,7 @@ def error(code):
 #/<name>/<id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<otherreason>
 @app.route("/check/<name>/<Id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<distance>/<otherreason>")
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
-    stud = student(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason)
+    stud = student(name,int(Id),int(grade),sports,internship,dual,disabilities,distance,otherreason)
     pS = next(parkingSpace for parkingSpace in spacesList if parkingSpace.taken==False)
     return nick.eval(stud, pS)
     

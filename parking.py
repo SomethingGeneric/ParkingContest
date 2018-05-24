@@ -20,6 +20,8 @@ class check:
                 else:
                     if self.checkForSpecialStuff(stdnt) > 3:
                         return self.accept(stdnt, parkingSpace)
+                    else:
+                        return self.reject("Um reason?")
 
             else:
                 return self.reject("ID ain't valid m8 hah")

@@ -33,7 +33,7 @@ def welcome():
     app.logger.info('Someone saw the welcome page')
     return serve_raw('signup')
 
-@app.errorhandler(505)
+@app.errorhandler(500)
 def error(code):
     return "Kris succ"
 

@@ -27,7 +27,7 @@ class check:
         elif stdnt.grade == 12:
             # conditions
             if self.checkID(stdnt) == True:
-                if stdnt.distanceInMiles =< 1.0:
+                if stdnt.distanceInMiles <= 1.0:
                     return self.reject("Um walk?")
                 else:
                     if self.checkForSpecialStuff(stdnt) >= 1:

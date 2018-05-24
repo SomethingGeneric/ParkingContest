@@ -7,7 +7,7 @@ from parking import parkingSpace
 
 app = Flask(__name__)
 nick= parking.check()
-spacesList = [parkingSpace] * 65
+spacesList = [parkingSpace(False,None)] * 65
 
 
 def serve_raw(name):

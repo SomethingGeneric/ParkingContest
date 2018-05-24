@@ -42,7 +42,7 @@ def welcome():
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
     stud = student(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason)
     pS = next(parkingSpace for parkingSpace in spacesList if parkingSpace.taken==False)
-    print(nick.eval(stud, pS))
+    return nick.eval(stud, pS)
     
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably

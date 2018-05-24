@@ -5,7 +5,7 @@ class check:
     def __init__(self):
         return
     #Pass in a student object
-    def eval(self,stdnt):
+    def eval(self,stdnt, parkingSpace):
 
 
         if stdnt.grade == 9:
@@ -19,7 +19,7 @@ class check:
                     return self.reject("Um walk?")
                 else:
                     if self.checkForSpecialStuff(stdnt) > 3:
-                        return self.accept(stdnt)
+                        return self.accept(stdnt, parkingSpace)
 
             else:
                 return self.reject("ID ain't valid m8")
@@ -31,12 +31,14 @@ class check:
                     return self.reject("Um walk?")
                 else:
                     if self.checkForSpecialStuff(stdnt) >= 1:
-                        return self.giveParkingSpace(stdnt)
+                        return self.accept(stdnt, parkingSpace)
             else:
                 return self.reject("ID ain't valid m8")
    #Methods about stuff
     def reject(self,reason):
         return "Hah no: " + reason
+    def accept(self, stud, parkingSpace):
+        return "Hah wow you were accepted " + stud.name, + " you got parking space " + parkingSpace
 
     def checkID(self,Student):
         if len(Student.ID) != 6:
@@ -66,9 +68,6 @@ class check:
 
         return count
 
-    def giveParkingSpace(self,student):
-        #assign the student to the next available parking space
-        return("lol yes go: " + student.name)
 
 
 #This is the student object that contains all the information required.

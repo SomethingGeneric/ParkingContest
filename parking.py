@@ -47,7 +47,7 @@ class check:
     def checkID(self,Student):
         if len(Student.ID) != 6:
             return False
-        elif len(Student.ID == 6):
+        elif len(Student.ID) == 6:
             #A little unsure if this works
             p = re.compile('[a-zA-Z]')
             if re.match(p, Student.ID):

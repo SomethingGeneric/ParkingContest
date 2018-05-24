@@ -22,7 +22,7 @@ class check:
                         return self.accept(stdnt, parkingSpace)
 
             else:
-                return self.reject("ID ain't valid m8")
+                return self.reject("ID ain't valid m8 hah")
 
         elif stdnt.grade == 12:
             # conditions
@@ -34,6 +34,8 @@ class check:
                         return self.accept(stdnt, parkingSpace)
             else:
                 return self.reject("ID ain't valid m8")
+        else:
+            return self.reject("Um how exist?")
    #Methods about stuff
     def reject(self,reason):
         return "Hah no: " + reason

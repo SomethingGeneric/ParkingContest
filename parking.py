@@ -38,7 +38,9 @@ class check:
     def reject(self,reason):
         return "Hah no: " + reason
     def accept(self, stud, parkingSpace):
-        return "Hah wow you were accepted " + stud.name, + " you got parking space " + parkingSpace
+        parkingSpace.taken == True
+        parkingSpace.student = stud
+        return "Hah wow you were accepted " + stud.name, + " you got a parking space."
 
     def checkID(self,Student):
         if len(Student.ID) != 6:

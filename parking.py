@@ -62,7 +62,7 @@ class check:
         if student.intern == True:
             count += 2
         if student.dual == True:
-            count += 1
+            count += 1.5
         if student.disabilities == True:
             count += 2
         if student.other_reason == True:

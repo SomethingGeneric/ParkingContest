@@ -37,6 +37,10 @@ def welcome():
 def error(code):
     return "Kris succ"
 
+@app.errorhandler(404)
+def fourofour(code):
+    return "Matt and Kris both succ"
+
 # if you were running this locally, you'd enter http://localhost:2107/check to get this
   #string,string,int,string,boolean,boolean,boolean,string
 #/<name>/<id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<otherreason>

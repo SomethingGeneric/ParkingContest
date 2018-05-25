@@ -54,6 +54,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             pS = i
             break
     return nick.eval(stud, pS)
+    json("heff.heck",stud.name + ", " + stud.Id + ", " + stud.grade + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + stud.distance+", " + stud.otherreason)
 
 def bFS(string):
     if string == True:
@@ -62,8 +63,8 @@ def bFS(string):
         return False
     else:
         return False
-def json(txtToWrite):
-    f = open("heff.json",'a+')
+def heff(filename, txtToWrite):
+    f = open(filename,'a+')
     f.write(txtToWrite) #or f.write(variable)
     f.close()
 

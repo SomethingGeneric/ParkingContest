@@ -55,9 +55,9 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     return nick.eval(stud, pS)
 
 def bFS(string):
-    if string == true:
+    if string == True:
         return True
-    elif string == false:
+    elif string == False:
         return False
     else:
         return False

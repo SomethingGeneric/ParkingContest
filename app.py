@@ -47,7 +47,11 @@ def fourofour(code):
 @app.route("/check/<name>/<Id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<distance>/<otherreason>")
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
     stud = student(name,Id,int(grade),bFS(sports),bFS(internship),bFS(dual),bFS(disabilities),float(distance),bFS(otherreason)
-    pS = next(parkingSpace for parkingSpace in spacesList if parkingSpace.taken==False)
+    pS = None
+    for i in spacesList:
+                   if(spacesList[i].taken == False:
+                      pS = spacesList[i]
+                      break
     return nick.eval(stud, pS)
 
 def bFS(string):

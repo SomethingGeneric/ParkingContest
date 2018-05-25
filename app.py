@@ -55,11 +55,11 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             pS = i
             break
     from_kris = nick.eval(stud, pS)
-    print(stud.name + ", " + str(stud.Id) + ", " + str(stud.grade) + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + str(stud.distance) + ", " + stud.otherreason)
+    print(stud.name + ", " + str(stud.ID) + ", " + str(stud.grade) + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + str(stud.distance) + ", " + stud.otherreason)
     site = serve_raw("return")
     site = site.replace("$result",from_kris)
     return site
-    heff("heff.heck",stud.name + ", " + str(stud.Id) + ", " + str(stud.grade) + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + str(stud.distance) + ", " + stud.otherreason)
+    heff("heff.heck",stud.name + ", " + str(stud.ID) + ", " + str(stud.grade) + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + str(stud.distance) + ", " + stud.otherreason)
 
 def bFS(string):
     if string == "true":

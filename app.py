@@ -55,7 +55,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             pS = i
             break
     from_kris = nick.eval(stud, pS)
-    print(stud.name + ", " + stud.Id + ", " + stud.grade + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + stud.distance+", " + stud.otherreason)
+    print(stud.name + ", " + stud.ID + ", " + stud.grade + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + stud.distance+", " + stud.otherreason)
     site = serve_raw("return")
     site = site.replace("$result",from_kris)
     return site

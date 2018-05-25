@@ -49,11 +49,13 @@ def fourofour(code):
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
     stud = student(name,Id,int(grade),bFS(sports),bFS(internship),bFS(dual),bFS(disabilities),float(distance),bFS(otherreason))
     pS = None
+    
     for i in spacesList:
         if i.taken == False:
             pS = i
             break
     from_kris = nick.eval(stud, pS)
+    print(stud.name + ", " + stud.Id + ", " + stud.grade + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + stud.distance+", " + stud.otherreason)
     site = serve_raw("return")
     site = site.replace("$result",from_kris)
     return site

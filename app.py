@@ -53,7 +53,10 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
         if i.taken == False:
             pS = i
             break
-    return nick.eval(stud, pS)
+    from_kris = nick.eval(stud, pS)
+    site = serve_raw("return")
+    site = site.replace("$result",from_kris)
+    return site
     heff("heff.heck",stud.name + ", " + stud.Id + ", " + stud.grade + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + stud.distance+", " + stud.otherreason)
 
 def bFS(string):

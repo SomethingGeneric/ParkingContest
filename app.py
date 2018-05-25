@@ -54,7 +54,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             pS = i
             break
     return nick.eval(stud, pS)
-    json("heff.heck",stud.name + ", " + stud.Id + ", " + stud.grade + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + stud.distance+", " + stud.otherreason)
+    heff("heff.heck",stud.name + ", " + stud.Id + ", " + stud.grade + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + stud.distance+", " + stud.otherreason)
 
 def bFS(string):
     if string == True:

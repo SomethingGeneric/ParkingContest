@@ -13,7 +13,6 @@ SubmitButton.addEventListener("click", OnSubmitClick());
 
 
 function OnSubmitClick(){
-    window.open('0.0.0.0:2107/check/' + nameTextBox.value + '/' + IDTextBox.value + '/' + gradeTextBox.value + '/' + sportsCheckBox.value + '/' + internCheckBox.value + '/' + dualCheckBox.value + '/' + disabilitiesCheckBox.value + '/' + distanceTextBox.value + '/' + otherCheckBox, '_blank');
-    alert("hah lol kys");
+    window.location.href = 'home.mattcompton.me:2107/check/' + nameTextBox.value + '/' + IDTextBox.value + '/' + gradeTextBox.value + '/' + sportsCheckBox.value + '/' + internCheckBox.value + '/' + dualCheckBox.value + '/' + disabilitiesCheckBox.value + '/' + distanceTextBox.value + '/' + otherCheckBox, '_blank';
 }
 

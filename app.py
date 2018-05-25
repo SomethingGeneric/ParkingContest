@@ -62,9 +62,9 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     heff("heff.heck",stud.name + ", " + stud.Id + ", " + stud.grade + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + stud.distance+", " + stud.otherreason)
 
 def bFS(string):
-    if string == True:
+    if string == "true":
         return True
-    elif string == False:
+    elif string == "false":
         return False
     else:
         return False

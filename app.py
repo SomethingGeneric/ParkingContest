@@ -46,8 +46,8 @@ def fourofour(code):
 #/<name>/<id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<otherreason>
 @app.route("/check/<name>/<Id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<distance>/<otherreason>")
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
-    stud = student(name,Id,int(grade),bFS(sports),bFS(internship),bFS(dual),bFS(disabilities),float(distance),bFS(otherreason)
-    #pS = None
+    stud = student(name,Id,int(grade),bFS(sports),bFS(internship),bFS(dual),bFS(disabilities),float(distance),bFS(otherreason))
+    pS = None
     for i in spacesList:
         if spacesList[i].taken == False:
             pS = spacesList[i]

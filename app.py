@@ -46,9 +46,17 @@ def fourofour(code):
 #/<name>/<id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<otherreason>
 @app.route("/check/<name>/<Id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<distance>/<otherreason>")
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
-    stud = student(name,Id,int(grade),sports,internship,dual,disabilities,float(distance),otherreason)
+    stud = student(name,Id,int(grade),bFS(sports),bFS(internship),bFS(dual),bFS(disabilities),float(distance),bFS(otherreason)
     pS = next(parkingSpace for parkingSpace in spacesList if parkingSpace.taken==False)
     return nick.eval(stud, pS)
+
+def bFS(string):
+    if string == true:
+        return True
+    elif string == false:
+        return False
+    else:
+        return False
     
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably

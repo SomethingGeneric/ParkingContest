@@ -59,7 +59,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     site = serve_raw("return")
     site = site.replace("$result",from_kris)
     return site
-    heff("heff.heck",stud.name + ", " + stud.Id + ", " + stud.grade + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + stud.distance+", " + stud.otherreason)
+    heff("heff.heck",stud.name + ", " + str(stud.Id) + ", " + str(stud.grade) + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + str(stud.distance) + ", " + stud.otherreason)
 
 def bFS(string):
     if string == "true":

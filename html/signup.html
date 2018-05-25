@@ -52,9 +52,8 @@
 
 
 			function OnSubmitClick(){
-				var link = '0.0.0.0:2107/check/' + nameTextBox.value + '/' + IDTextBox.value + '/' + gradeTextBox.value + '/' + sportsCheckBox.checked + '/' + internCheckBox.checked + '/' + dualCheckBox.checked + '/' + disabilitiesCheckBox.checked + '/' + distanceTextBox.value + '/' + otherCheckBox.checked;
-    				alert(link);
-				window.open(link, '_blank');
+				var link = 'home.mattcompton.me:2107/check/' + nameTextBox.value + '/' + IDTextBox.value + '/' + gradeTextBox.value + '/' + sportsCheckBox.checked + '/' + internCheckBox.checked + '/' + dualCheckBox.checked + '/' + disabilitiesCheckBox.checked + '/' + distanceTextBox.value + '/' + otherCheckBox.checked;
+				window.location.href = link;
     				
 			}	
 		</script>

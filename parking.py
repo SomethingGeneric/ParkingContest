@@ -46,7 +46,7 @@ class check:
     def accept(self, stud, parkingSpace):
         parkingSpace.taken == True
         parkingSpace.student = stud
-        return "Hah wow you were accepted " + stud.name, + " you got a parking space."
+        return "Hah wow you were accepted " + stud.name + " you got a parking space."
 
     def checkID(self,Student):
         if len(Student.ID) != 6:

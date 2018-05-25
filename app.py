@@ -1,5 +1,6 @@
 from flask import Flask
 import parking
+import json
 from parking import student
 from parking import parkingSpace
 
@@ -53,6 +54,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             pS = i
             break
     return nick.eval(stud, pS)
+    heff("heff.heck",stud.name + ", " + stud.Id + ", " + stud.grade + ", " + stud.sports + ", " + stud.internship + ", " + stud.dual + ", " + stud.disabilities + ", " + stud.distance+", " + stud.otherreason)
 
 def bFS(string):
     if string == True:
@@ -61,7 +63,10 @@ def bFS(string):
         return False
     else:
         return False
-    
+def heff(filename, txtToWrite):
+    f = open(filename,'a+')
+    f.write(txtToWrite) #or f.write(variable)
+    f.close()
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably
 app.run(host='0.0.0.0',port=2107)

@@ -23,7 +23,6 @@ def serve_raw(name):
 # app.route is the url that the user will enter in the browser to get the contents of this function
 @app.route("/")
 def index():
-    print("Someone on home")
     app.logger.info('Someone saw the homepage')
     return serve_raw('index')
 
@@ -33,7 +32,6 @@ def end():
 
 @app.route("/signup")
 def welcome():
-    print("Signup page")
     app.logger.info('Someone saw the welcome page')
     return serve_raw('signup')
 
@@ -58,8 +56,6 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             pS = i
             break
     from_kris = nick.eval(stud, pS)
-    #print('This standard output', file=sys.stdout)
-    print("Student:\n------")
     print(stud.name + ", " + str(stud.ID) + ", " + str(stud.grade) + ", " + str(stud.sports) + ", " + str(stud.intern) + ", " + str(stud.dual) + ", " + str(stud.disabilities) + ", " + str(stud.distanceInMiles) + ", " + str(stud.other_reason))
     site = serve_raw("return")
     site = site.replace("$result",from_kris)
@@ -74,8 +70,12 @@ def bFS(string):
     else:
         return False
 def heff(Student):
-    with open('data.txt', 'a+') as outfile:
-        json.dump(data, outfile)
+    try:
+        with open('tmp/data.txt', 'a+') as outfile:
+            json.dump(Student, outfile)
+        print("yay")
+    except:
+        print("no file")
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably
 app.run(host='0.0.0.0',port=2107)

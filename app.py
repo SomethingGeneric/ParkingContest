@@ -71,7 +71,7 @@ def bFS(string):
     else:
         return False
 def heff(filename, Student):
-    jsonText = jsonify(Name=Student.name, ID=Student.ID, Grade=Student.grade, Sports=Student.sports, Internship=Student.intern, DualEnrollment=Student.dual, Disabilities=Student.disabilities. Distance=Student.distanceInMiles, Other=Student.other_reason)
+    jsonText = jsonify(Name=Student.name, ID=Student.ID, Grade=Student.grade, Sports=Student.sports, Internship=Student.intern, DualEnrollment=Student.dual, Disabilities=Student.disabilities, Distance=Student.distanceInMiles, Other=Student.other_reason)
     print(jsonText)
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably

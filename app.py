@@ -1,5 +1,4 @@
 from flask import Flask
-from flask import json
 import parking
 import json
 from parking import student
@@ -61,7 +60,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     site = serve_raw("return")
     site = site.replace("$result",from_kris)
     return site
-    heff("heff.heck", stud)
+    heff(stud)
 
 def bFS(string):
     if string == "true":
@@ -70,9 +69,9 @@ def bFS(string):
         return False
     else:
         return False
-def heff(filename, Student):
-    jsonText = json.dumps(Student)
-    print(jsonText + "Jeff", file=sys.stderr)
+def heff(Student):
+    with open('data.txt', 'w') as outfile:
+        json.dump(data, outfile)
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably
 app.run(host='0.0.0.0',port=2107)

@@ -1,8 +1,10 @@
 from flask import Flask
+from flask import json
 import parking
 import json
 from parking import student
 from parking import parkingSpace
+
 
 #I don't understand flask help -kris
 
@@ -68,10 +70,9 @@ def bFS(string):
         return False
     else:
         return False
-def heff(filename, txtToWrite):
-    f = open(filename,'a+')
-    f.write(txtToWrite) #or f.write(variable)
-    f.close()
+def heff(filename, Student):
+    jsonText = jsonify(Name=Student.name, ID=Student.ID, Grade=Student.grade, Sports=Student.sports, Internship=Student.intern, DualEnrollment=Student.dual, Disabilities=Student.disabilities. Distance=Student.distanceInMiles, Other=Student.other_reason)
+    print(jsonText)
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably
 app.run(host='0.0.0.0',port=2107)

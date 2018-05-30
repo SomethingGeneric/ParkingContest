@@ -23,6 +23,7 @@ def serve_raw(name):
 # app.route is the url that the user will enter in the browser to get the contents of this function
 @app.route("/")
 def index():
+    print("Someone on home")
     app.logger.info('Someone saw the homepage')
     return serve_raw('index')
 
@@ -32,6 +33,7 @@ def end():
 
 @app.route("/signup")
 def welcome():
+    print("Signup page")
     app.logger.info('Someone saw the welcome page')
     return serve_raw('signup')
 
@@ -57,6 +59,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             break
     from_kris = nick.eval(stud, pS)
     #print('This standard output', file=sys.stdout)
+    print("Student:\n------\n")
     print(stud.name + ", " + str(stud.ID) + ", " + str(stud.grade) + ", " + str(stud.sports) + ", " + str(stud.intern) + ", " + str(stud.dual) + ", " + str(stud.disabilities) + ", " + str(stud.distanceInMiles) + ", " + str(stud.other_reason))
     site = serve_raw("return")
     site = site.replace("$result",from_kris)

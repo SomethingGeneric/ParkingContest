@@ -59,7 +59,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             break
     from_kris = nick.eval(stud, pS)
     #print('This standard output', file=sys.stdout)
-    print("Student:\n------\n")
+    print("Student:\n------")
     print(stud.name + ", " + str(stud.ID) + ", " + str(stud.grade) + ", " + str(stud.sports) + ", " + str(stud.intern) + ", " + str(stud.dual) + ", " + str(stud.disabilities) + ", " + str(stud.distanceInMiles) + ", " + str(stud.other_reason))
     site = serve_raw("return")
     site = site.replace("$result",from_kris)

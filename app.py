@@ -81,9 +81,10 @@ def bFS(string):
     else:
         return False
 def heff(Student):
-        with open('/tmp/data.test', 'a+') as f:
-            f.write(json.dumps(Student))
-            print("yay")
+     e_text = Student.name + ", " + str(Student.ID) + ", " + str(Student.grade) + ", " + str(Student.sports) + ", " + str(Student.intern) + ", " + str(Student.dual) + ", " + str(Student.disabilities) + ", " + str(Student.distanceInMiles) + ", " + str(Student.other_reason) + "\n"
+     with open('/tmp/data.test', 'a+') as f:
+        f.write(e_text)
+        print("yay")
     
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably

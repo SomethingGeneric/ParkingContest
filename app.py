@@ -75,8 +75,8 @@ def bFS(string):
     else:
         return False
 def heff(Student):
-        with open('/tmp/data.test', 'a+') as outfile:
-            json.dump(Student, outfile)
+        with open('/tmp/data.test', 'a+') as f:
+            json.dumps(Student, f)
             print("yay")
     
 

@@ -61,8 +61,9 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             print(pS)
             break
     from_kris = nick.eval(stud, pS)
-    e_text = stud.name + ", " + str(stud.ID) + ", " + str(stud.grade) + ", " + str(stud.sports) + ", " + str(stud.intern) + ", " + str(stud.dual) + ", " + str(stud.disabilities) + ", " + str(stud.distanceInMiles) + ", " + str(stud.other_reason)
-    f_msg = from_kris + '\n' + e_text
+    x = "Algorithm result:\n" + from_kris
+    e_text = "Name: " + stud.name + ", ID: " + str(stud.ID) + ", Grade: " + str(stud.grade) + ", In sports: " + str(stud.sports) + ", Is an intern: " + str(stud.intern) + ", Is double enrolled: " + str(stud.dual) + ", Any disabilities: " + str(stud.disabilities) + ", Aprox. Distance from school: " + str(stud.distanceInMiles) + ", Contact for other reason: " + str(stud.other_reason)
+    f_msg = x + '\n' + e_text
     e.set_msg(admin_email,'Student Signup',f_msg)
     e.send()
     #heff(stud)
@@ -81,10 +82,9 @@ def bFS(string):
     else:
         return False
 def heff(Student):
-     e_text = Student.name + ", " + str(Student.ID) + ", " + str(Student.grade) + ", " + str(Student.sports) + ", " + str(Student.intern) + ", " + str(Student.dual) + ", " + str(Student.disabilities) + ", " + str(Student.distanceInMiles) + ", " + str(Student.other_reason) + "\n"
-     with open('/tmp/data.test', 'a+') as f:
-        f.write(e_text)
-        print("yay")
+        with open('/tmp/data.test', 'a+') as f:
+            f.write(json.dumps(Student))
+            print("yay")
     
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably

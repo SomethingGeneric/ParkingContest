@@ -2,7 +2,6 @@ from flask import Flask
 import parking
 import json
 import os
-from os import path
 from parking import student
 from parking import parkingSpace
 

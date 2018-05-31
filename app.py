@@ -1,6 +1,7 @@
 from flask import Flask
 import parking
 import json
+import requests
 from parking import student
 from parking import parkingSpace
 
@@ -59,8 +60,10 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     print(stud.name + ", " + str(stud.ID) + ", " + str(stud.grade) + ", " + str(stud.sports) + ", " + str(stud.intern) + ", " + str(stud.dual) + ", " + str(stud.disabilities) + ", " + str(stud.distanceInMiles) + ", " + str(stud.other_reason))
     site = serve_raw("return")
     site = site.replace("$result",from_kris)
-    return site
     heff(stud)
+    
+    return site
+    
 
 def bFS(string):
     if string == "true":

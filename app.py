@@ -83,7 +83,7 @@ def bFS(string):
         return False
 def heff(Student):
         with open('/tmp/data.test', 'a+') as f:
-            f.write("\n" + stud.name + ", " + str(stud.ID) + ", " + str(stud.grade) + ", " + str(stud.sports) + ", " + str(stud.intern) + ", " + str(stud.dual) + ", " + str(stud.disabilities) + ", " + str(stud.distanceInMiles))
+            f.write("\n" + Student.name + ", " + str(Student.ID) + ", " + str(Student.grade) + ", " + str(Student.sports) + ", " + str(Student.intern) + ", " + str(Student.dual) + ", " + str(Student.disabilities) + ", " + str(Student.distanceInMiles))
             print("yay")
     
 

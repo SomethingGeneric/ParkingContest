@@ -53,7 +53,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     pS = None
     
     for i in spacesList:
-        if i.taken == False:
+        if i.taken is False:
             pS = i
             print(pS)
             break

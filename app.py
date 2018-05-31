@@ -60,13 +60,18 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             pS = i
             print(pS)
             break
-    from_kris = nick.eval(stud, pS)
-    x = "Algorithm result:\n" + from_kris
-    e_text = "Name: " + stud.name + ", ID: " + str(stud.ID) + ", Grade: " + str(stud.grade) + ", In sports: " + str(stud.sports) + ", Is an intern: " + str(stud.intern) + ", Is double enrolled: " + str(stud.dual) + ", Any disabilities: " + str(stud.disabilities) + ", Aprox. Distance from school: " + str(stud.distanceInMiles) + ", Contact for other reason: " + str(stud.other_reason)
-    f_msg = x + '\n' + e_text
-    e.set_msg(admin_email,'Student Signup for '+stud.name,f_msg)
-    e.send()
-    heff(stud)
+        else:
+            continue
+    if pS is not None:     
+        from_kris = nick.eval(stud, pS)
+        x = "Algorithm result:\n" + from_kris
+        e_text = "Name: " + stud.name + ", ID: " + str(stud.ID) + ", Grade: " + str(stud.grade) + ", In sports: " + str(stud.sports) + ", Is an intern: " + str(stud.intern) + ", Is double enrolled: " + str(stud.dual) + ", Any disabilities: " + str(stud.disabilities) + ", Aprox. Distance from school: " + str(stud.distanceInMiles) + ", Contact for other reason: " + str(stud.other_reason)
+        f_msg = x + '\n' + e_text
+        e.set_msg(admin_email,'Student Signup for '+stud.name,f_msg)
+        e.send()
+        writeData(stud)
+    else:
+        from_kris = nick.reject("No vacant spaces")
     site = serve_raw("return")
     site = site.replace("$result",from_kris)
     
@@ -81,7 +86,7 @@ def bFS(string):
         return False
     else:
         return False
-def heff(Student):
+def writeData(Student):
         with open('data.test', 'a+') as f:
             f.write("\n" + Student.name + ", " + str(Student.ID) + ", " + str(Student.grade) + ", " + str(Student.sports) + ", " + str(Student.intern) + ", " + str(Student.dual) + ", " + str(Student.disabilities) + ", " + str(Student.distanceInMiles))
             print("yay")

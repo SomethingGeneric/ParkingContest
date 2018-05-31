@@ -5,14 +5,16 @@ import os
 import sys
 from parking import student
 from parking import parkingSpace
+from heck import heff
 
+admin_email = 'webmaster@expeditionventures.co'
 
 #I don't understand flask help -kris
 
 app = Flask(__name__)
 nick= parking.check()
 spacesList = [parkingSpace(False,None)] * 65
-
+e = heff()
 
 def serve_raw(name):
     f = open("html/"+name+".html")
@@ -59,11 +61,14 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             print(pS)
             break
     from_kris = nick.eval(stud, pS)
-    print(stud.name + ", " + str(stud.ID) + ", " + str(stud.grade) + ", " + str(stud.sports) + ", " + str(stud.intern) + ", " + str(stud.dual) + ", " + str(stud.disabilities) + ", " + str(stud.distanceInMiles) + ", " + str(stud.other_reason))
-    
+    e_text = stud.name + ", " + str(stud.ID) + ", " + str(stud.grade) + ", " + str(stud.sports) + ", " + str(stud.intern) + ", " + str(stud.dual) + ", " + str(stud.disabilities) + ", " + str(stud.distanceInMiles) + ", " + str(stud.other_reason)
+    f_msg = from_kris + '\n' + e_text
+    e.set_msg(admin_email,'Student Signup',f_msg)
+    e.send()
+    heff(stud)
     site = serve_raw("return")
     site = site.replace("$result",from_kris)
-    heff(stud)
+    
     
     return site
     
@@ -76,9 +81,9 @@ def bFS(string):
     else:
         return False
 def heff(Student):
-        with open('data.test', 'a+') as f:
+        with open('/tmp/data.test', 'a+') as f:
             f.write(json.dumps(Student))
-        print("yay")
+            print("yay")
     
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably

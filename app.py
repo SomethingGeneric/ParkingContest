@@ -55,6 +55,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     for i in spacesList:
         if i.taken == False:
             pS = i
+            print(pS)
             break
     from_kris = nick.eval(stud, pS)
     print(stud.name + ", " + str(stud.ID) + ", " + str(stud.grade) + ", " + str(stud.sports) + ", " + str(stud.intern) + ", " + str(stud.dual) + ", " + str(stud.disabilities) + ", " + str(stud.distanceInMiles) + ", " + str(stud.other_reason))

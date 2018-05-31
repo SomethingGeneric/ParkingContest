@@ -2,7 +2,10 @@ from gmail import *
 
 class heff:
   def __init__(self):
-    self.oof = GMail('BCC Student Parking <parkingcontestfocs@gmail.com>','thisisastrongpassword')
+    x = open('passwd')
+    passwd = x.read()
+    x.close()
+    self.oof = GMail('BCC Student Parking <parkingcontestfocs@gmail.com>',passwd)
   def set_msg(self,recv,subj,cont):
     self.msg = Message(subj,to=recv,text=cont)
   def send(self):

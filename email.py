@@ -21,4 +21,4 @@ try:
     server.sendmail(sent_from, to, email_text)
     server.close()
 except:  
-    print 'Something went wrong...'
+    print('Something went wrong...')

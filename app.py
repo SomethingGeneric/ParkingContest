@@ -75,12 +75,10 @@ def bFS(string):
     else:
         return False
 def heff(Student):
-    try:
         with open('/tmp/data.test', 'a+') as outfile:
             json.dump(Student, outfile)
-        print("yay")
-    except:
-        print("no file")
+            print("yay")
+    
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably
 app.run(host='0.0.0.0',port=2107)

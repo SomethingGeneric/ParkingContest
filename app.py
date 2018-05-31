@@ -66,7 +66,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     f_msg = x + '\n' + e_text
     e.set_msg(admin_email,'Student Signup for '+stud.name,f_msg)
     e.send()
-    #heff(stud)
+    heff(stud)
     site = serve_raw("return")
     site = site.replace("$result",from_kris)
     

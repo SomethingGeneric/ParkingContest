@@ -9,44 +9,44 @@ class check:
 
 
         if stdnt.grade == 9:
-            return self.reject("Um how drive?")
+            return self.reject("You are not legally allowed to drive")
         elif stdnt.grade == 10:
-            return self.reject("Um how drive?")
+            return self.reject("You are not legally allowed to drive")
         elif stdnt.grade == 11:
             # qualifiers
             if self.checkID(stdnt) == True:
                 if stdnt.distanceInMiles < 1.0:
-                    return self.reject("Um walk?")
+                    return self.reject("You are close enough to walk")
                 else:
                     if self.checkForSpecialStuff(stdnt) > 3:
                         return self.accept(stdnt, parkingSpace)
                     else:
-                        return self.reject("Um reason?")
+                        return self.reject("You do not have good enough of a reason")
 
             else:
-                return self.reject("ID ain't valid m8 hah")
+                return self.reject("Your ID is not valid")
 
         elif stdnt.grade == 12:
             # conditions
             if self.checkID(stdnt) == True:
                 if stdnt.distanceInMiles <= 1.0:
-                    return self.reject("Um walk?")
+                    return self.reject("You are close enough to walk")
                 else:
                     if self.checkForSpecialStuff(stdnt) >= 1:
                         return self.accept(stdnt, parkingSpace)
                     else:
-                        return self.reject("Um reason?")
+                        return self.reject("You do not have good enough of a reason")
             else:
-                return self.reject("ID ain't valid m8")
+                return self.reject("Your ID is not valid")
         else:
-            return self.reject("Um how exist?")
+            return self.reject("You are not in high school")
    #Methods about stuff
     def reject(self,reason):
-        return "Hah no: " + reason
+        return "Rejected: " + reason
     def accept(self, stud, parkingSpace):
         parkingSpace.taken == True
         parkingSpace.student = stud
-        return "Hah wow you were accepted " + stud.name + " you got a parking space."
+        return "You were accepted, " + stud.name + "."
 
     def checkID(self,Student):
         if len(Student.ID) != 6:

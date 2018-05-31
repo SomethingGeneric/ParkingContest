@@ -1,24 +1,21 @@
+# Python code to illustrate Sending mail from 
+# your Gmail account 
 import smtplib
-
-gmail_user = 'parkingcontestfocs@gmail.com'  
-gmail_password = 'thisisastrongpassword'
-
-to = ['mcompton2002@gmail.com']
-sent_from = gmail_user
-
-email_text = '''
-From: parkingcontestfocs@gmail.com
-To: mcompton2002@gmail.com
-Subject: OOF
-
-L
-'''
-
-try:  
-    server = smtplib.SMTP_SSL('smtp.gmail.com', 465)
-    server.ehlo()
-    server.login(gmail_user, gmail_password)
-    server.sendmail(sent_from, to, email_text)
-    server.close()
-except:  
-    print('Something went wrong...')
+ 
+# creates SMTP session
+s = smtplib.SMTP('smtp.gmail.com', 587)
+ 
+# start TLS for security
+s.starttls()
+ 
+# Authentication
+s.login("parkingcontestfocs@gmail.com", "thisisastrongpassword")
+ 
+# message to be sent
+message = "Message_you_need_to_send"
+ 
+# sending the mail
+s.sendmail("parkingcontestfocs@gmail.com", "mcompton2002@gmail.com", message)
+ 
+# terminating the session
+s.quit()

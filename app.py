@@ -6,6 +6,7 @@ import sys
 from parking import student
 from parking import parkingSpace
 from heck import heff
+import linecache
 
 admin_email = 'webmaster@expeditionventures.co'
 
@@ -15,7 +16,7 @@ app = Flask(__name__)
 nick= parking.check()
 
 #FILE FOR STORAGE
-
+storageFN = 'Students.ls'
 
 e = heff()
 
@@ -50,6 +51,10 @@ def error(code):
 def fourofour(code):
     return "Matt and Whit both succ"
 
+@app.route("/space/<number>")
+def getSpaceInfo():
+    return linecache.getline(storageFN, number)
+
 
 # if you were running this locally, you'd enter http://localhost:2107/check to get this
   #string,string,int,string,boolean,boolean,boolean,string
@@ -57,7 +62,7 @@ def fourofour(code):
 @app.route("/check/<name>/<Id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<distance>/<otherreason>")
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
     stud = student(name,Id,int(grade),bFS(sports),bFS(internship),bFS(dual),bFS(disabilities),float(distance),bFS(otherreason))
-    print("THIS IS THE CURRENT FILE LENGTH: " + str(file_len('data.test')))
+    print("THIS IS THE CURRENT FILE LENGTH: " + str(file_len(storageFN)))
     
        
     #CHECKS FOR THE NUMBER OF LINES IN 'data.test'
@@ -86,7 +91,7 @@ def bFS(string):
     else:
         return False
 def writeData(Student):
-        with open('data.test', 'a+') as f:
+        with open(storageFN, 'a+') as f:
             f.write(Student.name + ", " + str(Student.ID) + ", " + str(Student.grade) + ", " + str(Student.sports) + ", " + str(Student.intern) + ", " + str(Student.dual) + ", " + str(Student.disabilities) + ", " + str(Student.distanceInMiles) + "\n")
             print("yay")
 

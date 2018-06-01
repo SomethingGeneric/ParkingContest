@@ -1,8 +1,8 @@
 from flask import Flask
 import parking
 from parking import student
-import email
-from email import EmailMsg
+import DataEmail
+from DataEmail import EmailMsg
 import linecache
 
 admin_email = 'webmaster@expeditionventures.co'

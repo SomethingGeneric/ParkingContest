@@ -62,7 +62,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
        
     #CHECKS FOR THE NUMBER OF LINES IN 'data.test'
     if file_len('data.test') < 65: 
-        from_kris = nick.eval(stud, pS)
+        from_kris = nick.eval(stud)
         x = "Algorithm result:\n" + from_kris
         e_text = "Name: " + stud.name + ", ID: " + str(stud.ID) + ", Grade: " + str(stud.grade) + ", In sports: " + str(stud.sports) + ", Is an intern: " + str(stud.intern) + ", Is double enrolled: " + str(stud.dual) + ", Any disabilities: " + str(stud.disabilities) + ", Aprox. Distance from school: " + str(stud.distanceInMiles) + ", Contact for other reason: " + str(stud.other_reason)
         f_msg = x + '\n' + e_text

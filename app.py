@@ -15,7 +15,7 @@ nick= parking.check()
 #FILE FOR STORAGE
 storageFN = 'Students.ls'
 
-e = heff()
+e = EmailMsg()
 
 def serve_raw(name):
     f = open("html/"+name+".html")

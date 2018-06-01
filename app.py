@@ -57,7 +57,7 @@ def fourofour(code):
 @app.route("/check/<name>/<Id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<distance>/<otherreason>")
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
     stud = student(name,Id,int(grade),bFS(sports),bFS(internship),bFS(dual),bFS(disabilities),float(distance),bFS(otherreason))
-    print("THIS IS THE CURRENT FILE LENGTH: " + file_len('data.test'))
+    print("THIS IS THE CURRENT FILE LENGTH: " + str(file_len('data.test')))
     
        
     #CHECKS FOR THE NUMBER OF LINES IN 'data.test'

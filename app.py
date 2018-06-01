@@ -65,6 +65,9 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             print(pS.number)
             i.taken = True
             break
+        else:
+            continue
+        break    
         
     if pS is not None:     
         from_kris = nick.eval(stud, pS)

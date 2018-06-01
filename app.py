@@ -52,7 +52,7 @@ def fourofour(code):
     return "Matt and Whit both succ"
 
 @app.route("/space/<number>")
-def getSpaceInfo(numberc):
+def getSpaceInfo(number):
     return linecache.getline(storageFN, number)
 
 

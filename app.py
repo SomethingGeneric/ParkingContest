@@ -62,7 +62,7 @@ def getSpaceInfo(number):
 @app.route("/check/<name>/<Id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<distance>/<otherreason>")
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
     stud = student(name,Id,int(grade),bFS(sports),bFS(internship),bFS(dual),bFS(disabilities),float(distance),bFS(otherreason))
-    print("THIS IS THE CURRENT FILE LENGTH: " + str(file_len(storageFN)))
+    
     
        
     #CHECKS FOR THE NUMBER OF LINES IN storageFN
@@ -74,6 +74,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
         e.set_msg(admin_email,'Student Signup for '+stud.name,f_msg)
         e.send()
         writeData(stud)
+        print("THIS IS THE CURRENT FILE LENGTH: " + str(file_len(storageFN)))
     else:
         from_kris = nick.reject("No vacant spaces")
     site = serve_raw("return")

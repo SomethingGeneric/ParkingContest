@@ -1,6 +1,7 @@
 from flask import Flask
 import parking
 from parking import student
+import email
 from email import EmailMsg
 import linecache
 

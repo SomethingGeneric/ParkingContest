@@ -5,7 +5,7 @@ class check:
     def __init__(self):
         return
     #Pass in a student object
-    def eval(self,stdnt, parkingSpace):
+    def eval(self,stdnt):
 
 
         if stdnt.grade == 9:
@@ -19,7 +19,7 @@ class check:
                     return self.reject("You are close enough to walk")
                 else:
                     if self.checkForSpecialStuff(stdnt) > 3:
-                        return self.accept(stdnt, parkingSpace)
+                        return self.accept(stdnt)
                     else:
                         return self.reject("You do not have good enough of a reason")
 
@@ -33,7 +33,7 @@ class check:
                     return self.reject("You are close enough to walk")
                 else:
                     if self.checkForSpecialStuff(stdnt) >= 1:
-                        return self.accept(stdnt, parkingSpace)
+                        return self.accept(stdnt)
                     else:
                         return self.reject("You do not have good enough of a reason")
             else:
@@ -43,9 +43,7 @@ class check:
    #Methods about stuff
     def reject(self,reason):
         return "Rejected: " + reason
-    def accept(self, stud, parkingSpace):
-        parkingSpace.taken == True
-        parkingSpace.student = stud
+    def accept(self, stud):
         return "You were accepted, " + stud.name + "."
 
     def checkID(self,Student):

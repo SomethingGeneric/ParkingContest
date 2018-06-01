@@ -13,10 +13,8 @@ admin_email = 'webmaster@expeditionventures.co'
 
 app = Flask(__name__)
 nick= parking.check()
-spacesList = [parkingSpace(False,None)] * 65
+spacesList = [parkingSpace(False,None,spacesList.index(self))] * 65
 
-for i in spacesList:
-    i.number = spacesList.index(i)
 
 e = heff()
 

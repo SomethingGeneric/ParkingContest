@@ -112,8 +112,8 @@ class parkingSpace:
     student = None
     number = 0
 
-    def __init__(self, taken, student, number):
+    def __init__(self, taken, student):
         self.taken = taken
         self.student = student
-        self.number = number
+        self.number = 0
 

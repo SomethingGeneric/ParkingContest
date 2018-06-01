@@ -1,6 +1,6 @@
 from gmail import *
 
-class heff:
+class EmailMsg:
   def __init__(self):
     x = open('passwd')
     passwd = x.read()

@@ -62,7 +62,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     for i in spacesList:
         if i.taken is False:
             pS = i
-            print(pS)
+            print(pS.number)
             break
         else:
             continue

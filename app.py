@@ -42,11 +42,11 @@ def welcome():
 
 @app.errorhandler(500)
 def error(code):
-    return "Kris succ"
+    return "500: Server Error"
 
 @app.errorhandler(404)
 def fourofour(code):
-    return "Matt and Whit both succ"
+    return "404: Not Found"
 
 @app.route("/space/<number>")
 def getSpaceInfo(number):

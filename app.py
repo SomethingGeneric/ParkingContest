@@ -62,6 +62,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             i.number = spacesList.index(i) + 1
             pS = i
             print(pS.number)
+            i.taken = True
             break
         else:
             continue

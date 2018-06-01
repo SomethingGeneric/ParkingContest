@@ -53,7 +53,7 @@ def fourofour(code):
 
 @app.route("/space/<number>")
 def getSpaceInfo(number):
-    return linecache.getline(storageFN, number)
+    return linecache.getline(storageFN, int(number))
 
 
 # if you were running this locally, you'd enter http://localhost:2107/check to get this

@@ -110,8 +110,10 @@ class student:
 class parkingSpace:
     taken = False
     student = None
+    number = 0
 
     def __init__(self, taken, student):
         self.taken = taken
         self.student = student
+        self.number = 0
 

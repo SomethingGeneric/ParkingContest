@@ -60,12 +60,12 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     for i in spacesList:
         if i.taken is False:
             i.number = spacesList.index(i) + 1
+            i.student = stud
             pS = i
             print(pS.number)
             i.taken = True
             break
-        else:
-            continue
+        
     if pS is not None:     
         from_kris = nick.eval(stud, pS)
         x = "Algorithm result:\n" + from_kris + "\nThe student was assigned to parking space " + str(pS.number)

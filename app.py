@@ -66,7 +66,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     
        
     #CHECKS FOR THE NUMBER OF LINES IN storageFN
-    if file_len(storageFN) < 65: 
+    if file_len(storageFN) < 75: 
         from_kris = nick.eval(stud)
         x = "Algorithm result:\n" + from_kris
         e_text = "Name: " + stud.name + ", ID: " + str(stud.ID) + ", Grade: " + str(stud.grade) + ", In sports: " + str(stud.sports) + ", Is an intern: " + str(stud.intern) + ", Is double enrolled: " + str(stud.dual) + ", Any disabilities: " + str(stud.disabilities) + ", Aprox. Distance from school: " + str(stud.distanceInMiles) + ", Contact for other reason: " + str(stud.other_reason)

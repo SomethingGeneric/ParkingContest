@@ -31,7 +31,7 @@ def index():
     app.logger.info('Someone saw the homepage')
     return serve_raw('index')
 
-@app.route("/kys")
+@app.route("/kill")
 def end():
     quit()
 

@@ -96,10 +96,7 @@ def writeData(Student):
             print("yay")
 
 def file_len(fname):
-    with open(fname) as f:
-        for i, l in enumerate(f):
-            pass
-        return i + 1    
+    return len(open(fname).readlines()) 
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably
 app.run(host='0.0.0.0',port=2107)

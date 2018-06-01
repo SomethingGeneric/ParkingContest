@@ -51,7 +51,7 @@ def fourofour(code):
 @app.route("/space/<number>")
 def getSpaceInfo(number):
     x = linecache.getline(storageFN, int(number) + 1)
-    if x is not None:
+    if x is not "":
         return x
     else:
         return "Not Occupied"

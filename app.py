@@ -58,8 +58,8 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     pS = None
     
     for i in spacesList:
-        i.number = spacesList.index(i)
         if i.taken is False:
+            i.number = spacesList.index(i) + 1
             pS = i
             print(pS.number)
             break
@@ -67,7 +67,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
             continue
     if pS is not None:     
         from_kris = nick.eval(stud, pS)
-        x = "Algorithm result:\n" + from_kris
+        x = "Algorithm result:\n" + from_kris + "\nThe student was assigned to parking space " + pS.number
         e_text = "Name: " + stud.name + ", ID: " + str(stud.ID) + ", Grade: " + str(stud.grade) + ", In sports: " + str(stud.sports) + ", Is an intern: " + str(stud.intern) + ", Is double enrolled: " + str(stud.dual) + ", Any disabilities: " + str(stud.disabilities) + ", Aprox. Distance from school: " + str(stud.distanceInMiles) + ", Contact for other reason: " + str(stud.other_reason)
         f_msg = x + '\n' + e_text
         e.set_msg(admin_email,'Student Signup for '+stud.name,f_msg)

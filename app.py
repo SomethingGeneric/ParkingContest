@@ -13,7 +13,7 @@ admin_email = 'webmaster@expeditionventures.co'
 
 app = Flask(__name__)
 nick= parking.check()
-spacesList = [parkingSpace(False,None,spacesList.index(self))] * 65
+spacesList = [parkingSpace(False,None,0)] * 65
 
 
 e = heff()
@@ -58,6 +58,7 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     pS = None
     
     for i in spacesList:
+        i.number = spacesList.index(i)
         if i.taken is False:
             pS = i
             print(pS.number)

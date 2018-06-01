@@ -13,7 +13,7 @@ admin_email = 'webmaster@expeditionventures.co'
 
 app = Flask(__name__)
 nick= parking.check()
-spacesList = [parkingSpace(False,None)] * 65
+
 
 
 e = heff()
@@ -57,13 +57,12 @@ def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason
     stud = student(name,Id,int(grade),bFS(sports),bFS(internship),bFS(dual),bFS(disabilities),float(distance),bFS(otherreason))
     pS = None
     
+    #SETTING THE STUDENT TO THE LIST AND WHETHER ITS TAKEN IS IN THE accept() METHOD
     for i in spacesList:
         if i.taken is False:
             i.number = spacesList.index(i) + 1
-            i.student = stud
             pS = i
             print(pS.number)
-            i.taken = True
             break
         else:
             continue

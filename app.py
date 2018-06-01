@@ -14,7 +14,8 @@ admin_email = 'webmaster@expeditionventures.co'
 app = Flask(__name__)
 nick= parking.check()
 
-spacesList = [parkingSpace(False, None)] * 65
+#FILE FOR STORAGE
+
 
 e = heff()
 
@@ -49,28 +50,20 @@ def error(code):
 def fourofour(code):
     return "Matt and Whit both succ"
 
+
 # if you were running this locally, you'd enter http://localhost:2107/check to get this
   #string,string,int,string,boolean,boolean,boolean,string
 #/<name>/<id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<otherreason>
 @app.route("/check/<name>/<Id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<distance>/<otherreason>")
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
     stud = student(name,Id,int(grade),bFS(sports),bFS(internship),bFS(dual),bFS(disabilities),float(distance),bFS(otherreason))
-    pS = None
+    print("THIS IS THE CURRENT FILE LENGTH: " + file_len('data.test'))
     
-    #SETTING THE STUDENT TO THE LIST AND WHETHER ITS TAKEN IS IN THE accept() METHOD
-    for i in spacesList:
-        if i.taken is False:
-            i.number = spacesList.index(i) + 1
-            pS = i
-            print(pS.number)
-            break
-        else:
-            continue
-        break    
-        
-    if pS is not None:     
+       
+    #CHECKS FOR THE NUMBER OF LINES IN 'data.test'
+    if file_len('data.test') < 65: 
         from_kris = nick.eval(stud, pS)
-        x = "Algorithm result:\n" + from_kris + "\nThe student was assigned to parking space " + str(pS.number)
+        x = "Algorithm result:\n" + from_kris
         e_text = "Name: " + stud.name + ", ID: " + str(stud.ID) + ", Grade: " + str(stud.grade) + ", In sports: " + str(stud.sports) + ", Is an intern: " + str(stud.intern) + ", Is double enrolled: " + str(stud.dual) + ", Any disabilities: " + str(stud.disabilities) + ", Aprox. Distance from school: " + str(stud.distanceInMiles) + ", Contact for other reason: " + str(stud.other_reason)
         f_msg = x + '\n' + e_text
         e.set_msg(admin_email,'Student Signup for '+stud.name,f_msg)
@@ -94,9 +87,14 @@ def bFS(string):
         return False
 def writeData(Student):
         with open('data.test', 'a+') as f:
-            f.write("\n" + Student.name + ", " + str(Student.ID) + ", " + str(Student.grade) + ", " + str(Student.sports) + ", " + str(Student.intern) + ", " + str(Student.dual) + ", " + str(Student.disabilities) + ", " + str(Student.distanceInMiles))
+            f.write(Student.name + ", " + str(Student.ID) + ", " + str(Student.grade) + ", " + str(Student.sports) + ", " + str(Student.intern) + ", " + str(Student.dual) + ", " + str(Student.disabilities) + ", " + str(Student.distanceInMiles) + "\n")
             print("yay")
-    
+
+def file_len(fname):
+    with open(fname) as f:
+        for i, l in enumerate(f):
+            pass
+    return i + 1    
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably
 app.run(host='0.0.0.0',port=2107)

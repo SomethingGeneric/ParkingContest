@@ -12,6 +12,6 @@ class EmailMsg:
     self.oof.send(self.msg)
     
 if __name__ == "__main__":
-  e = heff()
+  e = EmailMsg()
   e.set_msg('mcompton2002@gmail.com','Hello?','Hello world?')
   e.send()

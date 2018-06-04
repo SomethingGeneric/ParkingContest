@@ -42,11 +42,11 @@ def welcome():
 
 @app.errorhandler(500)
 def error(code):
-    return "500: Server Error <a href='http://home.mattcompton.me:2107'>Home</a> "
+    return "500: Server Error <a href='http://home.mattcompton.me:2107'>Click Here to go Back</a>"
 
 @app.errorhandler(404)
 def fourofour(code):
-    return "404: Not Found <a href='http://home.mattcompton.me:2107'>Home</a>"
+    return "404: Not Found <a href='http://home.mattcompton.me:2107'>Click Here to go Back</a>"
 
 @app.route("/space/<number>")
 def getSpaceInfo(number):

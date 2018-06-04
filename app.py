@@ -42,7 +42,7 @@ def welcome():
 
 @app.errorhandler(500)
 def error(code):
-    return "500: Server Error"
+    return "500: Server Error <a href='http://home.mattcompton.me:2107'>Home</a> "
 
 @app.errorhandler(404)
 def fourofour(code):

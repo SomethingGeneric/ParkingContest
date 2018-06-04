@@ -46,7 +46,7 @@ def error(code):
 
 @app.errorhandler(404)
 def fourofour(code):
-    return "404: Not Found"
+    return "404: Not Found <a href='http://home.mattcompton.me:2107'>Home</a>"
 
 @app.route("/space/<number>")
 def getSpaceInfo(number):

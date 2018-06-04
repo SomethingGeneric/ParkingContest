@@ -52,7 +52,7 @@ def fourofour(code):
 def fouroneo(code):
     return "410: File Deleted <a href='http://home.mattcompton.me:2107/.>Click Here to go Back</a>"
 
-@app.errorhandle*(403)
+@app.errorhandle(403)
 def fourothree(code):
     return "403: Not allowed to enter <a href='http://home.mattcompteon.me:2107/.>Click Here to go Back</a>
 

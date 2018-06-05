@@ -9,42 +9,42 @@ class check:
 
 
         if stdnt.grade == 9:
-            return self.reject("You are not legally allowed to drive")
+            return self.reject(self.checkForSpecialStuff(stdnt))
         elif stdnt.grade == 10:
-            return self.reject("You are not legally allowed to drive")
+            return self.reject(self.checkForSpecialStuff(stdnt))
         elif stdnt.grade == 11:
             # qualifiers
             if self.checkID(stdnt) == True:
                 if stdnt.distanceInMiles < 1.0:
-                    return self.reject("You are close enough to walk")
+                    return self.reject(self.checkForSpecialStuff(stdnt))
                 else:
                     if self.checkForSpecialStuff(stdnt) > 3:
-                        return self.accept(stdnt)
+                        return self.accept(self.checkForSpecialStuff(stdnt))
                     else:
-                        return self.reject("You do not have good enough of a reason")
+                        return self.reject(self.checkForSpecialStuff(stdnt))
 
             else:
-                return self.reject("Your ID is not valid")
+                return self.reject(self.checkForSpecialStuff(stdnt))
 
         elif stdnt.grade == 12:
             # conditions
             if self.checkID(stdnt) == True:
                 if stdnt.distanceInMiles <= 1.0:
-                    return self.reject("You are close enough to walk")
+                    return self.reject(self.checkForSpecialStuff(stdnt))
                 else:
                     if self.checkForSpecialStuff(stdnt) >= 1:
-                        return self.accept(stdnt)
+                        return self.accept(self.checkForSpecialStuff(stdnt))
                     else:
-                        return self.reject("You do not have good enough of a reason")
+                        return self.reject(self.checkForSpecialStuff(stdnt))
             else:
-                return self.reject("Your ID is not valid")
+                return self.reject(self.checkForSpecialStuff(stdnt))
         else:
-            return self.reject("You are not in high school")
+            return self.reject(self.checkForSpecialStuff(stdnt))
    #Methods about stuff
-    def reject(self,reason):
-        return "Rejected: " + reason
-    def accept(self, stud):
-        return "You were accepted, " + stud.name + "."
+    def reject(self,score):
+        return "Hah Here's your score lol: " + str(score) + ". Sent to the administrator."
+    def accept(self, score):
+        return "Hah Here's your score lol: " + str(score) + ". Sent to the administrator and saved."
 
     def checkID(self,Student):
         if len(Student.ID) != 6:

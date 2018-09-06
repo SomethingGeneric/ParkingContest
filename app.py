@@ -1,8 +1,8 @@
 from flask import Flask
 import parking
 from parking import student
-import DataEmail
-from DataEmail import EmailMsg
+#import DataEmail
+#from DataEmail import EmailMsg
 import linecache
 
 admin_email = 'webmaster@expeditionventures.co'
@@ -15,7 +15,7 @@ nick= parking.check()
 #FILE FOR STORAGE
 storageFN = 'Students.ls'
 
-e = EmailMsg()
+#e = EmailMsg()
 
 def serve_raw(name):
     f = open("html/"+name+".html")
@@ -48,13 +48,13 @@ def error(code):
 def fourofour(code):
     return "404: Not Found <a href='http://home.mattcompton.me:2107'>Click Here to go Back</a>"
 
-@app.errorhandle(410)
+@app.errorhandler(410)
 def fouroneo(code):
     return "410: File Deleted <a href='http://home.mattcompton.me:2107/.>Click Here to go Back</a>"
 
-@app.errorhandle(403)
+@app.errorhandler(403)
 def fourothree(code):
-    return "403: Not allowed to enter <a href='http://home.mattcompteon.me:2107/.>Click Here to go Back</a>
+    return "403: Not allowed to enter <a href='http://home.mattcompteon.me:2107/.>Click Here to go Back</a>"
 
 @app.route("/space/<number>")
 def getSpaceInfo(number):
@@ -71,27 +71,27 @@ def getSpaceInfo(number):
 @app.route("/check/<name>/<Id>/<grade>/<sports>/<internship>/<dual>/<disabilities>/<distance>/<otherreason>")
 def check(name,Id,grade,sports,internship,dual,disabilities,distance,otherreason):
     stud = student(name,Id,int(grade),bFS(sports),bFS(internship),bFS(dual),bFS(disabilities),float(distance),bFS(otherreason))
-    
-    
-       
+
+
+
     #CHECKS FOR THE NUMBER OF LINES IN storageFN
-    if file_len(storageFN) < 75: 
+    if file_len(storageFN) < 75:
         from_kris = nick.eval(stud)
         x = "Algorithm result:\n" + from_kris
         e_text = "Name: " + stud.name + ", ID: " + str(stud.ID) + ", Grade: " + str(stud.grade) + ", In sports: " + str(stud.sports) + ", Is an intern: " + str(stud.intern) + ", Is double enrolled: " + str(stud.dual) + ", Any disabilities: " + str(stud.disabilities) + ", Aprox. Distance from school: " + str(stud.distanceInMiles) + ", Contact for other reason: " + str(stud.other_reason)
         f_msg = x + '\n' + e_text
-        e.set_msg(admin_email,'Student Signup for '+stud.name,f_msg)
-        e.send()
+        #e.set_msg(admin_email,'Student Signup for '+stud.name,f_msg)
+        #e.send()
         writeData(stud)
         print("THIS IS THE CURRENT FILE LENGTH: " + str(file_len(storageFN)))
     else:
         from_kris = nick.reject("No vacant spaces")
     site = serve_raw("return")
     site = site.replace("$result",from_kris)
-    
-    
+
+
     return site
-    
+
 
 def bFS(string):
     if string == "true":
@@ -106,7 +106,7 @@ def writeData(Student):
             print("yay")
 
 def file_len(fname):
-    return len(open(fname).readlines()) - 1 
+    return len(open(fname).readlines()) - 1
 
 # host 0.0.0.0 means run according to the system's policy, port not being on 80 (standard url port) means I won't get rko'd by bot DDOS probably
 app.run(host='0.0.0.0',port=2107)
